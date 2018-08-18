@@ -1,0 +1,26 @@
+<section class="container">
+	<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"  class="row-border hover">
+    <thead>
+    <tr>
+        <th style="width: 20%"> Name </th>
+        <th style="width: 50%"> Release Date </th>
+        <th style="width: 10%"> Rating</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of movie">
+        <td>{{item.name}}</td>
+        <td>{{item.ReDate}}</td>
+        <td class="text-right">
+        	<span>
+        		<img width="16px" *ngIf="item.rate >= 1" src="assets/star_filled_32.png" alt='star'/>
+        		<img width="16px" *ngIf="item.rate >= 2" src="assets/star_filled_32.png" alt='star'/>
+        		<img width="16px" *ngIf="item.rate >= 3" src="assets/star_filled_32.png" alt='star'/>
+        		<img width="16px" *ngIf="item.rate >= 4" src="assets/star_filled_32.png" alt='star'/>
+        		<img width="16px" *ngIf="item.rate >= 5" src="assets/star_filled_32.png" alt='star'/>
+        	</span>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</section>
